@@ -39,5 +39,38 @@ module.exports = {
     }
 
     return response.json(dev);
+  },
+
+  async update(request, response) {
+    const { name, bio, avatar_url, techs, latitude, longitude } = request.body;
+
+    const { github_username } = request.params;
+
+    const dev = await Dev.findOne({ github_username });
+
+    const techsArray = parseStringAsArray(techs);
+
+    const location = {
+      type: "Point",
+      coordinates: [longitude, latitude]
+    };
+
+    await dev.update({
+      name,
+      bio,
+      avatar_url,
+      techs: techsArray,
+      location
+    });
+
+    return response.json(request.body);
+  },
+
+  async destroy(request, response) {
+    const { github_username } = request.params;
+
+    await Dev.remove({ github_username });
+
+    return response.json({});
   }
 };
