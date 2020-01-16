@@ -20,12 +20,19 @@ function App() {
     loadDevs();
   }, []);
 
+  async function handleDeleteDev(github_username) {
+    await api.delete(`/devs/${github_username}`);
+    const response = await api.get("/devs");
+
+    setDevs(response.data);
+  }
+
   return (
     <>
       <GlobalStyle />
       <Container>
         <Sidebar devs={devs} setDevs={setDevs} />
-        <Main devs={devs} />
+        <Main devs={devs} handleDeleteDev={handleDeleteDev} />
       </Container>
     </>
   );

@@ -1,14 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Container, DevItem, UserInfo } from "./styles";
+import deleteImg from "../../assets/images/delete.svg";
 
-export default function Main({ devs }) {
+import { Container, DevItem, DeleteContainer, UserInfo } from "./styles";
+
+export default function Main({ devs, handleDeleteDev }) {
   return (
     <Container>
       <ul>
         {devs.map(dev => (
           <DevItem key={dev._id}>
+            <DeleteContainer
+              onClick={() => handleDeleteDev(dev.github_username)}
+            >
+              <img src={deleteImg} alt="Deletar Dev" />
+            </DeleteContainer>
+
             <header>
               <img src={dev.avatar_url} alt={dev.name} />
               <UserInfo className="user-info">
@@ -40,5 +48,6 @@ Main.propTypes = {
       bio: PropTypes.string,
       techs: PropTypes.arrayOf(PropTypes.string)
     })
-  ).isRequired
+  ).isRequired,
+  handleDeleteDev: PropTypes.func.isRequired
 };

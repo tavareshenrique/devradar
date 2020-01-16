@@ -54,6 +54,18 @@ export const DevItem = styled.li`
   }
 `;
 
+export const DeleteContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  img {
+    height: 14px;
+    width: 14px;
+    cursor: pointer;
+  }
+`;
+
 export const UserInfo = styled.div`
   margin-left: 10px;
 
