@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import api from "../../services/api";
 
+import { toast } from "react-toastify";
+
 import { Container, InputBlock, InputGroup } from "./styles";
 
 export default function Sidebar({ devs, setDevs }) {
@@ -39,6 +41,7 @@ export default function Sidebar({ devs, setDevs }) {
     setGithubusername("");
     setTechs("");
     setDevs([...devs, response.data]);
+    toast.success(`Bem-vindo ao DevRadar, ${github_username}!`);
   }
 
   return (
