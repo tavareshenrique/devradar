@@ -8,6 +8,7 @@ import { Marker, Callout } from "react-native-maps";
 import { MaterialIcons } from "@expo/vector-icons";
 
 import api from "../../services/api";
+import { connect, disconnect, subscribeToNewDevs } from "../../services/socket";
 
 import {
   MapContainer,
@@ -49,6 +50,18 @@ export default function Main({ navigation }) {
     loadInitialPosition();
   }, []);
 
+  useEffect(() => {
+    subscribeToNewDevs(dev => setDevs([...devs, dev]));
+  }, [devs]);
+
+  function setupWebSocket() {
+    disconnect();
+
+    const { latitude, longitude } = currentRegion;
+
+    connect(latitude, longitude, techs);
+  }
+
   async function loadDevs() {
     const { latitude, longitude } = currentRegion;
 
@@ -61,6 +74,7 @@ export default function Main({ navigation }) {
     });
 
     setDevs(response.data.devs);
+    setupWebSocket();
   }
 
   function handleRegionChanged(region) {
