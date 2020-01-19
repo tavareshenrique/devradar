@@ -39,8 +39,8 @@ export default function Main({ navigation }) {
         const { latitude, longitude } = coords;
 
         setCurrentRegion({
-          latitude: -22.1055606,
-          longitude: -43.2125219,
+          latitude: latitude,
+          longitude: longitude,
           latitudeDelta: 0.04,
           longitudeDelta: 0.04
         });
