@@ -1,15 +1,9 @@
 <h1 align="center">
-  
-<br>
-  
-<h1 align="center">
   <img alt="GoStack" src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/bootcamp-header.png" width="200px" />
+  <br>
+   DevRadar - Semana OmniStack 10
 </h1>
   
-<br>
-DevRadar - Semana OmniStack 10
-</h1>
-
 <p align="center">O <b>DevRadar</b> é um projeto resultado da Semana Omnistack 10. Essa aplicação foi construida utilizando <b>NodeJS</b>, <b>ReactJS</b> e <b>React Native</b>. O <b>DevRadar</b> trata-se de uma aplicação cujo o objetivo é encontrar outos <b>Devs</b> que trabalham com a tecnologia que você está procurando em um raio de 10Km.
 </p>
 
