@@ -1,6 +1,6 @@
 <h1 align="center">
 <br>
-  <img src="https://hotmart.s3.amazonaws.com/product_pictures/6bd576fb-5d9f-4c15-b59d-482ff6a26cbe/GO1.png" alt="GoBarber" height="300">
+  <img src="https://camo.githubusercontent.com/8c13dc2618dbd7f76d1d574350b98fdee1335ce5/68747470733a2f2f726f636b6574736561742d63646e2e73332d73612d656173742d312e616d617a6f6e6177732e636f6d2f626f6f7463616d702d6865616465722e706e67" alt="GoBarber" height="300">
 <br>
 <br>
 DevRadar - Semana OmniStack 10
